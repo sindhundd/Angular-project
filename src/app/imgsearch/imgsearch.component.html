@@ -1,0 +1,25 @@
+
+<div class="row adddiv">
+  <div class="col-md-2"></div>
+  <div class="col-md-4">
+  <input type="text" class="form-control" placeholder="Keyword .." [(ngModel)]="name" >
+  </div>
+  <div class="col-md-3 " style="margin: 2%">
+    <button class="btn btn-success" (click)="getImage()">Search</button>
+  </div>
+  <div class="col-md-3"></div>
+</div>
+
+<div class="row">
+<div *ngFor="let image of images" class="col-3 text-center card">
+  <div class="col-md-3 " id="img-container" style="padding:15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;" >
+    <a [href]="image.largeImageURL" title="Click to preview picture" target="blank">
+    <img [src]="image.previewURL" class="zoom card-img-top" alt="..." style="width:150px;height:91px;">
+    </a>
+  </div>
+</div>
+
+</div>

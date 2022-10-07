@@ -1,0 +1,22 @@
+<div class="adddiv">
+  <form [formGroup]="loginForm" (ngSubmit)="register(loginForm)">
+      <div class="row">
+        <div class="col-md-4">User Name
+          </div>
+        <div class="col-md-6">
+           <input type="text" class="form-control" formControlName="uname" required >
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">Password
+          </div>
+        <div class="col-md-6">
+         <input type="password" class="form-control" formControlName="password" required >
+      </div>
+      </div>
+        <div class="row">
+          <button class="btn btn-primary" >Login</button>
+        </div>
+
+  </form>
+</div>

@@ -1,0 +1,75 @@
+<h4>Register account ! </h4>
+<hr>
+<div class="adddiv">
+  <form [formGroup]="registerForm" (ngSubmit)="register(registerForm)">
+    <div class="row" style="margin-bottom:10px;">
+      <div class="col-md-4">User Name
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" formControlName="uname" required>
+      </div>
+
+    </div>
+    <div class="row" style="margin-bottom:10px;">
+      <div class="col-md-4">Password
+      </div>
+      <div class="col-md-6">
+        <input type="password" class="form-control" formControlName="password" required min="6">
+      </div>
+
+    </div>
+    <div class="row" style="margin-bottom:10px;">
+      <div class="col-md-4">Confirm Password
+      </div>
+      <div class="col-md-6">
+        <input type="password" class="form-control" formControlName="confirmPassword" required min="6">
+      </div>
+
+    </div>
+
+    <div class="row" style="margin-bottom:5px;">
+      <div class="col-md-12">
+        <span class="alert"
+              *ngIf="registerForm.get('uname').invalid && (registerForm.get('uname').dirty || registerForm.get('uname').touched)">
+              <small>* Username should be a valid email</small>
+            </span>
+      </div>
+    </div>
+
+    <div class="row" style="margin-bottom:5px;">
+      <div class="col-md-12">
+        <span class="alert "
+              *ngIf="registerForm.get('password').invalid && (registerForm.get('password').dirty || registerForm.get('password').touched)">
+              <small> * Password should be atleast 6 characters</small>
+            </span>
+
+      </div>
+    </div>
+    <div class="row" style="margin-bottom:5px;">
+      <div class="col-md-12">
+ <span class="alert "
+       *ngIf="registerForm.get('confirmPassword').invalid && (registerForm.get('confirmPassword').dirty || registerForm.get('confirmPassword').touched)">
+               <small>* Confirm password should not be empty</small>
+            </span>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <button class="btn btn-primary" [disabled]="registerForm.invalid">Register</button>
+    </div>
+
+  </form>
+
+</div>
+
+
+<hr>
+<div class="row" style="margin-top:15px;">
+  <div class="col-md-12">
+    <label>Already registered ?<a routerLink="login" href="#" class="nav-item nav-link">Login</a></label>
+  </div>
+</div>
+
+
+
